@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-gB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>My page title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/lit.css" />
+    <link rel="stylesheet" href="../../static/catalog/style.css" />
+</head>
+
+<body>
+    <div class ="row">
+        <div class="2 col"></div>
+        <div class="8 col">
+            {% if game_list %}
+                <div class="card" style="max-width: 550px">
+                {% for game in game_list %}
+                    <p><a href="{% url 'oneGame' game.id %}">{{ game.title }}</a></p>
+                {% endfor %}
+                </div>
+            {% else %}
+                <p>No polls are available.</p>
+            {% endif %}            
+        </div>
+        <div class="2 col"></div>
+    </div>
+</body>

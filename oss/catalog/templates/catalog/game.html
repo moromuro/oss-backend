@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-gB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>My page title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/lit.css" />
+    <link rel="stylesheet" href="../../static/catalog/style.css" />
+</head>
+
+<body>
+    <div class ="row">
+        <div class="2 col"></div>
+        <div class="8 col">
+            {% if game %}
+                <div class="card" style="max-width: 550px">
+                    <p>{{ game.title }}</p>
+                    <p>Game time: {{ game.game_date }}</p>
+                    <p>Duration: {{ game.duration }}</p>
+                    <p>System: {{ game.system }}</p>
+                    <p>{{ game.description }}</p>
+                    <p>Players: {{ game.players }}</p>
+                </div>
+            {% else %}
+                <p>No polls are available.</p>
+            {% endif %}            
+        </div>
+        <div class="2 col"></div>
+    </div>
+</body>
